@@ -14,8 +14,8 @@ export class AuthService {
   
   async signIn(email: string,  pass: string): Promise<any> {
     const user = await this.usersService.findOne(email)
-    const passwordValid = await compare(user.password, pass)
-    if (passwordValid) {
+    const passwordValid = await compare(pass, user.password)
+    if (!passwordValid) {
       throw new UnauthorizedException()
     }
 

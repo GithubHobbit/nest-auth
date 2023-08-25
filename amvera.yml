@@ -3,15 +3,24 @@ meta:
   toolchain:
     name: npm
     version: 18
-  environment: db
-  toolchain:
-    name: postgresql
-    version: 13
 build:
   artifacts:
     '*': /
-  # command: npm install && npm run build && npm run start:prod
+  command: ls
 run:
   persistenceMount: /data
   containerPort: 80
-  args: listen_addresses=0.0.0.0
+
+
+# meta:
+#   environment: node
+#   toolchain:
+#     name: npm
+#     version: 18
+# build:
+#   artifacts:
+#     '*': /
+# run:
+#   scriptName: ./amvera.yml
+#   persistenceMount: /data
+#   containerPort: 80

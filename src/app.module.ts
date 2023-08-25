@@ -10,11 +10,11 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'amvera-alex21092000-run-nest-auth',
-      port: 5432,
-      username: 'alex',
-      password: 'root',
-      database: 'auth',
+      host: 'containers-us-west-77.railway.app',
+      port: 6779,
+      username: 'postgres',
+      password: 'NzS3G0mfm2bk6qqnH4Y3',
+      database: 'railway',
       entities: [User, User_info],
       synchronize: true,
     }),

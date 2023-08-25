@@ -3,10 +3,15 @@ meta:
   toolchain:
     name: npm
     version: 18
+  environment: db
+  toolchain:
+    name: postgresql
+    version: 13
 build:
   artifacts:
     '*': /
-  command: npm install && npm run build && npm run start:prod
+  # command: npm install && npm run build && npm run start:prod
 run:
   persistenceMount: /data
   containerPort: 80
+  args: listen_addresses=0.0.0.0
